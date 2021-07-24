@@ -23,7 +23,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class TC_existinguser_04 {
+public class TC_existinguser_06 {
 
 	WebDriver cDriver;
 	@BeforeTest
@@ -83,10 +83,10 @@ void invalid_login(String username,String pass){
 	 cDriver.findElement(By.xpath("//input[@id='signInSubmit']")).click();
 	 WebElement feedbackElement=cDriver.findElement(By.xpath("//*[@id=\"auth-warning-message-box\"]/div"));
 	//System.out.println("2");
-	String f=feedbackElement.getText();
+	 String f=feedbackElement.getText();
 	//System.out.println("3");
-	System.out.println("Should not login..because of invalid credential");
-	System.out.println(f);
+	 System.out.println("Should not login..because of invalid credential");
+	 System.out.println(f);
 	 		
 
 }
@@ -97,3 +97,4 @@ void tearDown()
 	cDriver.quit();
 }
 }
+

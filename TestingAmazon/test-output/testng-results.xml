@@ -1,37 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-21T12:46:12 IST" name="Default suite" finished-at="2021-07-21T12:46:47 IST" duration-ms="34831">
+  <suite started-at="2021-07-24T14:02:48 IST" name="Suite" finished-at="2021-07-24T14:05:11 IST" duration-ms="143434">
     <groups>
     </groups>
-    <test started-at="2021-07-21T12:46:12 IST" name="Default test" finished-at="2021-07-21T12:46:47 IST" duration-ms="34831">
-      <class name="login.TC_existinguser_04">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:login.TC_existinguser_04@1cbbffcd]" started-at="2021-07-21T12:46:12 IST" name="setUp" finished-at="2021-07-21T12:46:20 IST" duration-ms="7731" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="invalid_login(java.lang.String,java.lang.String)[pri:0, instance:login.TC_existinguser_04@1cbbffcd]" started-at="2021-07-21T12:46:22 IST" name="invalid_login" description="It will not login" data-provider="LoginDataInputFromExcel" finished-at="2021-07-21T12:46:45 IST" duration-ms="23096" status="PASS">
+    <test started-at="2021-07-24T14:02:48 IST" name="ChromeTest" finished-at="2021-07-24T14:04:51 IST" duration-ms="123632">
+      <class name="Searching.TC_search_12">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Searching.TC_search_12@27ce24aa]" started-at="2021-07-24T14:02:48 IST" name="setup" finished-at="2021-07-24T14:03:38 IST" duration-ms="50037" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[suryarajan361@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Feb-15]]>
+                <![CDATA[Chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- invalid_login -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:login.TC_existinguser_04@1cbbffcd]" started-at="2021-07-21T12:46:45 IST" name="tearDown" finished-at="2021-07-21T12:46:47 IST" duration-ms="2239" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="checkSearch_product()[pri:0, instance:Searching.TC_search_12@27ce24aa]" started-at="2021-07-24T14:03:38 IST" name="checkSearch_product" finished-at="2021-07-24T14:04:51 IST" duration-ms="73431" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- login.TC_existinguser_04 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- checkSearch_product -->
+      </class> <!-- Searching.TC_search_12 -->
+    </test> <!-- ChromeTest -->
+    <test started-at="2021-07-24T14:04:55 IST" name="EdgeTest" finished-at="2021-07-24T14:05:11 IST" duration-ms="15833">
+      <class name="Searching.TC_search_12">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Searching.TC_search_12@74e52303]" started-at="2021-07-24T14:04:55 IST" name="setup" finished-at="2021-07-24T14:05:11 IST" duration-ms="15759" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.github.bonigarcia.wdm.WebDriverManagerException">
+            <message>
+              <![CDATA[java.util.NoSuchElementException]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.github.bonigarcia.wdm.WebDriverManagerException: java.util.NoSuchElementException
+at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:776)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:550)
+at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:773)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:550)
+at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:766)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:550)
+at io.github.bonigarcia.wdm.WebDriverManager.setup(WebDriverManager.java:260)
+at Searching.TC_search_12.setup(TC_search_12.java:37)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+at org.testng.TestRunner.run(TestRunner.java:589)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.util.NoSuchElementException
+at java.base/java.util.ArrayList$Itr.next(ArrayList.java:970)
+at io.github.bonigarcia.wdm.EdgeDriverManager.checkLatest(EdgeDriverManager.java:179)
+at io.github.bonigarcia.wdm.WebDriverManager.filterCandidateUrls(WebDriverManager.java:799)
+at io.github.bonigarcia.wdm.WebDriverManager.downloadAndExport(WebDriverManager.java:568)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:547)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.github.bonigarcia.wdm.WebDriverManagerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="checkSearch_product()[pri:0, instance:Searching.TC_search_12@74e52303]" started-at="2021-07-24T14:05:11 IST" name="checkSearch_product" finished-at="2021-07-24T14:05:11 IST" duration-ms="0" status="SKIP">
+          <exception class="io.github.bonigarcia.wdm.WebDriverManagerException">
+            <message>
+              <![CDATA[java.util.NoSuchElementException]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.github.bonigarcia.wdm.WebDriverManagerException: java.util.NoSuchElementException
+at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:776)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:550)
+at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:773)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:550)
+at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:766)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:550)
+at io.github.bonigarcia.wdm.WebDriverManager.setup(WebDriverManager.java:260)
+at Searching.TC_search_12.setup(TC_search_12.java:37)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+at org.testng.TestRunner.run(TestRunner.java:589)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.util.NoSuchElementException
+at java.base/java.util.ArrayList$Itr.next(ArrayList.java:970)
+at io.github.bonigarcia.wdm.EdgeDriverManager.checkLatest(EdgeDriverManager.java:179)
+at io.github.bonigarcia.wdm.WebDriverManager.filterCandidateUrls(WebDriverManager.java:799)
+at io.github.bonigarcia.wdm.WebDriverManager.downloadAndExport(WebDriverManager.java:568)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:547)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.github.bonigarcia.wdm.WebDriverManagerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkSearch_product -->
+      </class> <!-- Searching.TC_search_12 -->
+    </test> <!-- EdgeTest -->
+  </suite> <!-- Suite -->
 </testng-results>

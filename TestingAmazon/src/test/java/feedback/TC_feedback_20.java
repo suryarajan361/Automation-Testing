@@ -10,13 +10,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class TC_feedback_17 {
+public class TC_feedback_20{
 	WebDriver cDriver;
 	 @BeforeMethod
 	    void setUp()
@@ -43,6 +44,7 @@ void give_Feedback() throws InterruptedException {
     cDriver.findElement(By.xpath("//div[@id='averageCustomerReviews']//span[@id='acrCustomerReviewText']")).click();
     cDriver.findElement(By.xpath("//*[@id=\"histogramTable\"]/tbody/tr[1]/td[2]/a/div")).click();
 	cDriver.findElement(By.id("a-autoid-12-announce")).click();
+    cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ; 
 	WebElement emailidElement1=cDriver.findElement(By.xpath("//input[@id='ap_email']"));
 	emailidElement1.sendKeys("suryarajan361@gmail.com");
 
@@ -52,16 +54,16 @@ void give_Feedback() throws InterruptedException {
 	cDriver.findElement(By.xpath("//input[@id='signInSubmit']")).click();
 	
     WebElement txt=cDriver.findElement(By.xpath("//*[@id=\"customer_review-R35KDAFV0EIQ5I\"]/div[5]/div/span[1]/div[1]/span"));
+
     String s=txt.getText();
     System.out.println(s);
     System.out.println("Test case passed");
     
 }
-
-
-@AfterMethod
+@AfterTest
 void tearDown()
 {
-cDriver.close();
+	cDriver.close();
+	cDriver.quit();
 }
 }

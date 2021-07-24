@@ -2,19 +2,22 @@ package payment;
 
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class TC_payment_12{
+public class TC_payment_16{
 	WebDriver cDriver;
 	 @BeforeMethod
 	    void setUp()
@@ -43,16 +46,21 @@ public class TC_payment_12{
 		 String childId = it.next();
 		 cDriver.switchTo().window(childId);
 		 cDriver.findElement(By.id("add-to-cart-button")).click();
+		 cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 		 cDriver.findElement(By.id("hlb-ptc-btn-native")).click();
+		 cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 		 cDriver.findElement(By.xpath("//*[@id=\"address-book-entry-0\"]/div[2]/span/a")).click();
+		 cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 	     cDriver.findElement(By.xpath("//div[@class='a-row a-spacing-medium']//div[@class='a-box-inner']")).click();
+	     cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 	     System.out.println("Test Cases passed");
 	     System.out.println("proceed to pay button is clicked");
 	          
 	 }
-	 @AfterMethod
+	 @AfterTest
 	 void tearDown()
 	 {
-	 cDriver.close();
+	 	cDriver.close();
+	 	cDriver.quit();
 	 }
 	 }
