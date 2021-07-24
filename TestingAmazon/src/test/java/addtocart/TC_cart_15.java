@@ -1,6 +1,8 @@
 package addtocart;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +14,7 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class TC_cart_11 {
+public class TC_cart_15 {
 	
 
 	WebDriver cDriver;
@@ -35,8 +37,11 @@ public class TC_cart_11 {
 		 String childId = it.next();
 		 cDriver.switchTo().window(childId);
 		 cDriver.findElement(By.id("add-to-cart-button")).click();
+		 cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ; 
 		 cDriver.findElement(By.id("nav-cart")).click();
+		 cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ; 
 		 cDriver.findElement(By.cssSelector(" input[value='Delete']")).click();
+		 cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ; 
 		 System.out.println("Test cases passed");
 		 System.out.println("product is deleted successfully");
 		

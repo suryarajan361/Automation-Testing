@@ -9,13 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class TC_payment_13{
+public class TC_payment_17{
 	WebDriver cDriver;
 	 @BeforeMethod
 	    void setUp()
@@ -39,12 +40,11 @@ public class TC_payment_13{
 		 cDriver.findElement(By.xpath("//input[@class='a-button-input']")).click();
 		 System.out.println("Test Cases passed");
 	     System.out.println("Payment method option is selected successfully");
-	    
 	 }
-
-	 @AfterMethod
+	 @AfterTest
 	 void tearDown()
 	 {
-	 cDriver.close();
+	 	cDriver.close();
+	 	cDriver.quit();
 	 }
 	 }

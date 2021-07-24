@@ -1,16 +1,19 @@
 package login;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TC_existinguser_03 {
+public class TC_existinguser_05{
 
 	WebDriver cDriver;
 	
@@ -30,7 +33,10 @@ public class TC_existinguser_03 {
 	    		 cDriver.findElement(By.xpath("//input[@id='continue']")).click();
 	    		 WebElement passwordElement2= cDriver.findElement(By.xpath("//input[@id='ap_password']"));
 	             passwordElement2.sendKeys("Feb151998@");
+	             cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS); 
 	    		 cDriver.findElement(By.xpath("//input[@id='signInSubmit']")).click();
+	    		 WebElement logoElement=cDriver.findElement(By.xpath("//*[@id=\"nav-logo\"]"));
+	    	     Assert.assertTrue(logoElement.isDisplayed());
 	    		 WebElement username=cDriver.findElement(By.id("nav-link-accountList-nav-line-1"));
 	    		 Boolean b_username=username.isDisplayed();
 	    		 System.out.println(b_username);
@@ -53,5 +59,6 @@ public class TC_existinguser_03 {
 		 void tearDown()
 		 {
 		cDriver.close();
+		cDriver.quit();
 	}
 	}

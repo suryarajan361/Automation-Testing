@@ -8,12 +8,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TC_product_06
+public class TC_product_10
 {
 	WebDriver cDriver;
 	 @BeforeMethod
@@ -39,6 +40,7 @@ public class TC_product_06
 		  System.out.println(s);
 		  WebElement productdetails =cDriver.findElement(By.xpath("//*[@id=\"productDetails_feature_div\"]"));
 		  productdetails.click();
+		  cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 		  Boolean b_productimage= productdetails.isDisplayed();
  	      if(b_productimage)
  		  {
@@ -50,14 +52,13 @@ public class TC_product_06
  		 else 
  		  {
  			System.out.println("test is failed");	
- 		  }
+ 		 }
 	 }
-
-	 @AfterMethod
-	 void tearDown()
-	 {
-	cDriver.close();
-}
-}
-
+ 	     @AfterTest
+ 	     void tearDown()
+ 	     {
+ 	     	cDriver.close();
+ 	     	cDriver.quit();
+ 	     }
+ 	     }
 

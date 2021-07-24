@@ -2,6 +2,7 @@ package feedback;
 
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -9,13 +10,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class TC_feedback_15 {
+public class TC_feedback_18 {
 
 	WebDriver cDriver;
 	 @BeforeMethod
@@ -37,14 +39,14 @@ String parentId = it.next();
 String childId = it.next();
 cDriver.switchTo().window(childId);
 cDriver.findElement(By.xpath("//div[@id='averageCustomerReviews_feature_div']//span[@id='acrCustomerReviewText']")).click();
+cDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ; 
 System.out.println("Test Case Passed");
 
-}
-
-  @AfterMethod
+	 }
+	 @AfterTest
 	 void tearDown()
 	 {
-	cDriver.close();
-}
-}
-
+	 	cDriver.close();
+	 	cDriver.quit();
+	 }
+	 }
